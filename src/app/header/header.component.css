@@ -1,0 +1,11 @@
+
+.navbar {
+    margin-bottom: 0%;
+    position: relative;
+    width: 100%;
+    max-height: 65px;
+}
+
+.navbar-brand{
+    margin: 50% auto;
+}

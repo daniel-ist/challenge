@@ -1,0 +1,16 @@
+  <mat-list *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }; let i = index"
+  cols="4" rowHeight="2:1">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ user.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+                {{ user.body }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+  </mat-list>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  

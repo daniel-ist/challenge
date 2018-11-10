@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar></mat-toolbar>
+    <mat-nav-list class="list-container">
+      <a mat-list-item routerLink="/page1">Empty</a>
+      <a mat-list-item routerLink="/page2">Form</a>
+      <a mat-list-item routerLink="/page3">Posts</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h1></h1>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a href="#">
+          <img src="../../assets/home.png" width="40" height="40" alt="">
+      </a>
+      <span class="icon-separation"></span>
+      <a id="img-space" href="#">
+          <img src="../../assets/friends.png" width="40" height="40" alt="">
+      </a>
+      <a href="#">
+          <img src="../../assets/config.png" width="40" height="40" alt="">
+      </a>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
